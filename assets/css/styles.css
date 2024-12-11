@@ -1,0 +1,19 @@
+@font-face {
+    font-family: SF Outer Limits;
+    src: url('../font/SF\ Outer\ Limits.ttf');
+}
+
+body{
+    background-color: black;
+}
+
+/* header */
+.navbar-brand{
+    font-family: SF Outer Limits, Arial, Helvetica, sans-serif;
+}
+
+.seriesList{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
