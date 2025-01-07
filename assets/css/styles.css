@@ -49,3 +49,18 @@ body{
     background-size: cover;
 
 }
+
+.card-img-overlay{
+    visibility: hidden;
+    h3 {
+        color: white;
+        font-family: SF Outer Limits, Arial, Helvetica, sans-serif;
+        text-shadow: #000 1px 0 10px;
+    }
+}
+
+.card:hover{
+    .card-img-overlay{
+        visibility: visible;
+    }
+}

@@ -17,7 +17,7 @@ const options = {
           const serieCard = document.createElement('div');
           const cardBody = document.createElement('div')
           const img_500 = "https://image.tmdb.org/t/p/w500";
-          cardBody.classList.add('card-body')
+          cardBody.classList.add('card-img-overlay')
           serieCard.classList.add('card','rounded',)
           const  serieImg = document.createElement('img');
           serieImg.src = img_500 + serie.backdrop_path || serie.poster_path;
@@ -32,10 +32,10 @@ const options = {
 
           seriesList.appendChild(serieCard);
           serieCard.appendChild(serieImg);
-        //   serieCard.appendChild(cardBody);
-        //   cardBody.appendChild(serieTitle);
-        //   cardBody.appendChild(serieDate);
-        //   cardBody.appendChild(serieDesc);
+          serieCard.appendChild(cardBody);
+          cardBody.appendChild(serieTitle);
+          cardBody.appendChild(serieDate);
+          // cardBody.appendChild(serieDesc);
 
           serieTitle.classList.add('card-title')
 
@@ -47,3 +47,5 @@ const options = {
         showContainer.appendChild(seriesList); 
       })
     .catch(err => console.error(err));
+
+    
