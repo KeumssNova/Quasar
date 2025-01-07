@@ -1,3 +1,4 @@
+key  = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMDA4ZGUyOWUzYWQ1MDA2MTgwNGI3YmY2MmVmOTdkMSIsIm5iZiI6MTczMzMwOTUzOC4yNTEwMDAyLCJzdWIiOiI2NzUwMzQ2MjM1NWRiYzBiMTVkN2E5YjMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.1cQXQTWrc6xlSsm91H02kTsx5x2lwb01eV-VcyRk6rk";
 const options = {
     method: 'GET',
     headers: {
@@ -6,18 +7,18 @@ const options = {
     }
   };
   
-  fetch('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=10&sort_by=popularity.desc', options)
+  fetch("https://api.themoviedb.org/3/discover/tv?api_key={key}&with_genres=10765&language=fr-FR", options)
     .then(res => res.json())
     .then(data => {
         const showContainer = document.querySelector('.Show-Container');
-        const seriesList = document.createElement('div'); // Create an unordered list
+        const seriesList = document.createElement('div'); 
       
         data.results.forEach(serie => {  
           const serieCard = document.createElement('div');
           const cardBody = document.createElement('div')
           const img_500 = "https://image.tmdb.org/t/p/w500";
           cardBody.classList.add('card-body')
-          serieCard.classList.add('card','rounded', 'w-25')
+          serieCard.classList.add('card','rounded',)
           const  serieImg = document.createElement('img');
           serieImg.src = img_500 + serie.backdrop_path || serie.poster_path;
           serieImg.alt = serie.name;
@@ -27,7 +28,7 @@ const options = {
           serieDate.textContent = serie.firt_air_date;
           const serieDesc = document.createElement('p');
           serieDesc.textContent = serie.overview
-          serieImg.classList.add('card-image', 'rounded')
+          serieImg.classList.add('card-img', 'rounded')
 
           seriesList.appendChild(serieCard);
           serieCard.appendChild(serieImg);
@@ -43,6 +44,6 @@ const options = {
         });
         
         console.log(data.results)
-        showContainer.appendChild(seriesList); // Add the list to the container
+        showContainer.appendChild(seriesList); 
       })
     .catch(err => console.error(err));

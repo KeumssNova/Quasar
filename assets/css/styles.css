@@ -11,9 +11,41 @@ body{
 .navbar-brand{
     font-family: SF Outer Limits, Arial, Helvetica, sans-serif;
 }
+.Show-Container {
+    h1{
+        align-self: flex-start;
+        margin-left: 5rem;
+        color: white;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
 
+}
 .seriesList{
     background-color: black;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+
+
+}
+
+#hero {
+    height: 400px;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    h1{
+        font-family: SF Outer Limits, Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 80px;
+    }
+    background: url(../images/freepik__upgrade-quality-__39687.png);
+    background-size: cover;
+
 }
